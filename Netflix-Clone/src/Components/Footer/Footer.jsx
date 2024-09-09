@@ -36,6 +36,10 @@ function Footer() {
             </ul>
           </div>
         </div>
+        <div className="service-code">
+          <p>Service Code</p>
+        </div>
+        <div className="copy-write">&copy; 1997-2024 Netflix, Inc.</div>
       </div>
     </div>
   );

@@ -13,6 +13,7 @@ function Header() {
     <div className="header-outer-container">
       <div className="header-container">
         {/* Left side of the header with the logo and navigation links */}
+
         <div className="header-left">
           <nav>
             <ul>
@@ -34,12 +35,12 @@ function Header() {
 
         {/* Right side of the header with icons */}
         <div className="header-right">
-          <ul>
-            <li>SearchIcon</li>
-            <li>NotificationsNoneIcon</li>
-            <li>AccountBoxIcon</li>
-            <li>ArrowDropDownIcon</li>
-          </ul>
+          <div className="nav-icons">
+            <SearchIcon />
+            <NotificationsNoneIcon />
+            <AccountBoxIcon />
+            <ArrowDropDownIcon />
+          </div>
         </div>
       </div>
     </div>

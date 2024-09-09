@@ -1,4 +1,4 @@
-.header-outer-container{
+/* .header-outer-container{
   position: sticky;
   top: 0;
   display: flex;
@@ -6,14 +6,14 @@
   align-items: center;
   list-style: none;
   /* background-color: transparent; */
-  height: 10vh;
+  /* height: 10vh;
   color: white;
   transition: all 0.5s;
   transition-timing-function: ease-in;
   z-index: 1;
   background-color: black;
-}
-.nav-black {
+} */
+/* .nav-black {
   background-color: rgb(20, 20, 20);
 }
 .header-container {
@@ -27,6 +27,86 @@
   display: flex;
   list-style: none;
   justify-content: space-between;
+} */
+
+/* Outer container for the header that will stick to the top of the page */
+.header-outer-container {
+  position: sticky;
+  top: 0;
+  background-color: black; /* Background color for the header */
+  z-index: 1000; /* Ensures it stays on top of other elements when scrolling */
+  height: 10vh; /* Adjust the height of the header */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth transition on background color change */
 }
 
+/* Inner container for the header elements */
+.header-container {
+  width: 90%; /* Limits the width of the content inside the header */
+  display: flex;
+  justify-content: space-between; /* Separates left and right sections */
+  align-items: center;
+}
+
+/* Styling for the left section of the header (logo + nav items) */
+.header-left nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none; /* Removes default bullets from list items */
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for the navigation links */
+.header-left ul li {
+  margin-right: 20px; /* Spacing between the list items */
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.header-left ul li:hover {
+  color: gray; /* Changes text color on hover */
+}
+
+/* Netflix logo */
+.header-left ul li img {
+  max-height: 40px; /* Adjust the logo size */
+  margin-right: 20px; /* Adds space between the logo and the next nav item */
+}
+
+/* Right side of the header containing the icons */
+.header-right .nav-icons {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* Styling for each icon in the header */
+.header-right .nav-icons svg {
+  font-size: 28px; /* Adjusts the icon size */
+  margin-left: 20px; /* Adds space between each icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-right .nav-icons svg:hover {
+  color: gray; /* Changes icon color on hover */
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  .header-left ul li {
+    font-size: 12px; /* Smaller text for smaller screens */
+  }
+
+  .header-right .nav-icons svg {
+    font-size: 24px; /* Smaller icons for smaller screens */
+  }
+}
 
