@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source;
+  @import url(https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata);
+  :root {
+    --font-base: "Lexend", sans-serif;
+    --font-second-base: "Inter", sans-serif;
+    --primary-color: #ffff;
+    --secondary-color: #e50914;
+  }
+}
+body {
+  background: #111;
+}
