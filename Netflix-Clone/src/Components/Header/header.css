@@ -1,34 +1,3 @@
-/* .header-outer-container{
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  /* background-color: transparent; */
-  /* height: 10vh;
-  color: white;
-  transition: all 0.5s;
-  transition-timing-function: ease-in;
-  z-index: 1;
-  background-color: black;
-} */
-/* .nav-black {
-  background-color: rgb(20, 20, 20);
-}
-.header-container {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header-left ul {
-  width: 140%;
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-} */
-
 /* Outer container for the header that will stick to the top of the page */
 .header-outer-container {
   position: sticky;
@@ -109,4 +78,3 @@
     font-size: 24px; /* Smaller icons for smaller screens */
   }
 }
-

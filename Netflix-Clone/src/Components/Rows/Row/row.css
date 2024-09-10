@@ -1,0 +1,61 @@
+/* General row container styling */
+.row {
+  margin-left: 20px;
+  color: white;
+}
+
+.row h1 {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Poster container styling */
+.row__posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+/* Hides the scroll bar */
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Basic poster styling */
+.row__poster {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  margin-right: 10px;
+  transition: transform 450ms;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Hover effect to enlarge poster */
+.row__poster:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Styling for larger row posters */
+.row__posterLarge {
+  max-height: 250px;
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+  .row__poster {
+    max-height: 80px;
+  }
+
+  .row__posterLarge {
+    max-height: 180px;
+  }
+
+  .row h1 {
+    font-size: 1.2rem;
+  }
+}
