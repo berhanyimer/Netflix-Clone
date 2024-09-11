@@ -1,11 +1,12 @@
+// Importing necessary React hooks and dependencies for fetching data and managing state.
 import React, { useEffect, useState } from "react";
-import axios from "../../utils/axios";
-import requests from "../../utils/requests";
+import axios from "../../utils/axios";// Custom axios instance for making API requests.
+import requests from "../../utils/requests";// API endpoint configurations.
 import "./banner.css";
 
 const Banner = () => {
-  const [movie, setMovie] = useState([]);
-
+  const [movie, setMovie] = useState([]); // State to hold the selected movie.
+  // useEffect hook to fetch a random movie from Netflix Originals when the component mounts.
   useEffect(() => {
     async function fetchData() {
       try {
@@ -21,10 +22,10 @@ const Banner = () => {
       }
     }
     fetchData();
-  }, []);
+  }, []); // Empty dependency array ensures it runs only once on component mount.
 
   console.log(movie);
-
+  // JSX rendering the banner background and movie information.
   return (
     <div
       className="banner"
@@ -53,7 +54,7 @@ const Banner = () => {
     </div>
   );
 };
-
+// Helper function to truncate long movie descriptions.
 function truncate(str, n) {
   return str?.length > n ? str.substr(0, n - 1) + "..." : str;
 }

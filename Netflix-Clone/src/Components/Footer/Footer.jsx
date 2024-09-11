@@ -1,9 +1,10 @@
 import React from "react";
 import "./footer.css";
+// Importing icons from Material UI for social media links.
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-
+// Footer component for displaying social icons, links, and copyright information.
 function Footer() {
   return (
     <div className="footer-outer-container">

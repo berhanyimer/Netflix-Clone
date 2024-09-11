@@ -2,25 +2,23 @@
 .header-outer-container {
   position: sticky;
   top: 0;
-  background-color: black; /* Background color for the header */
-  z-index: 1000; /* Ensures it stays on top of other elements when scrolling */
+  background-color: rgb(20, 20, 20); /* Background color for the header */
+  z-index: 1; /* Ensures it stays on top of other elements when scrolling */
   height: 10vh; /* Adjust the height of the header */
+  color: white;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease; /* Smooth transition on background color change */
+  transition: all 0.5s; /* Smooth transition on background color change */
+  transition-timing-function: ease-in;
 }
-
-/* Inner container for the header elements */
 .header-container {
   width: 90%; /* Limits the width of the content inside the header */
   display: flex;
   justify-content: space-between; /* Separates left and right sections */
   align-items: center;
 }
-
-/* Styling for the left section of the header (logo + nav items) */
 .header-left nav ul {
   display: flex;
   align-items: center;

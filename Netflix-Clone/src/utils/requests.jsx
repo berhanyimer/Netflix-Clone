@@ -1,4 +1,6 @@
+// TMDb API key for authenticating requests
 const API_KEY = "07f44767996d979628eb96efc9195416";
+// Defining various API endpoints for fetching different categories of content from TMDb.
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
@@ -11,4 +13,4 @@ const requests = {
   fetchTVShows: `/tv/popular?api_key=${API_KEY}&language=en-US&page=1`,
 };
 
-export default requests;
+export default requests; // Exporting the requests object for use in making API calls.

@@ -1,23 +1,24 @@
+// Importing necessary React hooks, CSS for styling, and external dependencies.
 import React, { useEffect, useState } from "react";
 import "./row.css";
-import axios from "../../../utils/axios";
-import YouTube from "react-youtube";
-import movieTrailer from "movie-trailer"; // Import movie-trailer package
+import axios from "../../../utils/axios"; // Axios instance for API requests.
+import YouTube from "react-youtube";// For embedding YouTube player.
+import movieTrailer from "movie-trailer"; //  For finding movie trailers
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
-  const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState("");
+  const [movies, setMovies] = useState([]); // State to store fetched movie data.
+  const [trailerUrl, setTrailerUrl] = useState(""); // State to store the YouTube trailer URL.
 
-  const base_url = "https://image.tmdb.org/t/p/original";
+  const base_url = "https://image.tmdb.org/t/p/original"; // Base URL for movie images.
 
-  // Fetching data using useEffect
+  // useEffect hook to fetch movie data when the component mounts or fetchUrl changes.
   useEffect(() => {
     async function fetchData() {
       try {
         // console.log(fetchUrl)
         const request = await axios.get(fetchUrl);
         // console.log(Request)
-        setMovies(request.data.results);
+        setMovies(request.data.results); // Setting fetched movies to state.
       } catch (error) {
         console.log("Error", error);
       }
@@ -25,19 +26,19 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     fetchData();
   }, [fetchUrl]);
 
-  // Handle click event for trailers
+  // Function to handle click event and fetch trailer URL.
   const handleClick = (movie) => {
     if (trailerUrl) {
-      setTrailerUrl("");
+      setTrailerUrl(""); // If a trailer is already playing, stop it.
     } else {
       // Using movie-trailer to find the movie trailer link
       movieTrailer(movie?.title || movie?.name || movie?.original_name)
         .then((url) => {
-            console.log(url)
+          console.log(url);
           const urlParams = new URLSearchParams(new URL(url).search);
           console.log(urlParams);
-           console.log(urlParams.get("v"));
-          setTrailerUrl(urlParams.get("v"));
+          console.log(urlParams.get("v"));
+          setTrailerUrl(urlParams.get("v")); // Set the trailer URL if found.
         })
         .catch((error) => console.log("Error fetching trailer:", error));
     }
@@ -49,7 +50,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     width: "100%",
     playerVars: { autoplay: 1 },
   };
-
+  // JSX rendering the row with movie posters and trailer player.
   return (
     <div className="row">
       <h1>{title}</h1>
