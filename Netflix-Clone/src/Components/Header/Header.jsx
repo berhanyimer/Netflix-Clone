@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.css"; // Importing the CSS for the Header component
-import NetflixLogo from "../../assets/images/netflix-logo.png";
+import NetflixLogo from "../../assets/images/NetflixLogo.png";
 // Importing the Netflix logo image
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";

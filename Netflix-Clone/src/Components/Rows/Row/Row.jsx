@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./row.css";
-import axios from "axios";
-// import { width } from "@mui/system";
+import axios from "../../../utils/axios";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer"; // Import movie-trailer package
 
@@ -15,9 +14,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const request = await axios.get(
-          `http://localhost:4000/api/${fetchUrl}`
-        );
+        // console.log(fetchUrl)
+        const request = await axios.get(fetchUrl);
+        // console.log(Request)
         setMovies(request.data.results);
       } catch (error) {
         console.log("Error", error);
@@ -34,7 +33,10 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       // Using movie-trailer to find the movie trailer link
       movieTrailer(movie?.title || movie?.name || movie?.original_name)
         .then((url) => {
+            console.log(url)
           const urlParams = new URLSearchParams(new URL(url).search);
+          console.log(urlParams);
+           console.log(urlParams.get("v"));
           setTrailerUrl(urlParams.get("v"));
         })
         .catch((error) => console.log("Error fetching trailer:", error));
