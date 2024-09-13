@@ -1,5 +1,5 @@
 // TMDb API key for authenticating requests
-const API_KEY = "07f44767996d979628eb96efc9195416";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 // Defining various API endpoints for fetching different categories of content from TMDb.
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
